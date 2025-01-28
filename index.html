@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Tickethack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="pageContainer">
+
+
+        <header id="headerContainer">
+
+            <div>
+                <h1 id="logo">Tickethack</h1>
+            </div>
+
+            <nav id="navigation">  
+                <ul>  
+                    <li><a href="/frontend/cart.html">Cart</a></li>  
+                    <li><a href="/frontend/booking.html">Booking</a></li>   
+                </ul>  
+            </nav>
+                
+
+        </header>
+
+
+        <main id="mainContainer">
+            <div id="titles">
+                <h2>Explore the world effortlessly by train!</h2>
+                <p>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</p>
+            </div>
+
+            <div id="Boxes">
+
+                <div id="inputBoxe" class="boxe">
+
+                    <div id="inputsTrip">
+                        <input class="inputTop" type="text" value="Departure">
+                        <input class="inputDown" type="text" value="Arrival">
+                        <input class="input" type="date" value="2025-01-28" />
+                    </div>
+
+
+                    <div id="searchTrip">
+                        <button class="button" type="button"><strong>Search</strong></button>
+                    </div>
+
+                </div>
+
+                <div id="resultBoxe" class="boxe">
+                    <div id="defaultResult">
+                        <img src="/frontend/images/train.png"/>
+                        <p>It's time to book your future trip.</p>
+                    </div>
+                    <div class="tripContainer">
+                        <div id="DepartureCity">Departure</div>
+                        <div id="ArrivalCity">arrival</div>
+                        <div id="hour">hour</div>
+                        <div id="price">Price€</div>
+                        <input class="button" type="button" value="Book">
+                    </div>
+                </div>
+
+            </div>
+
+
+        </main>
+
+
+
+
+
+    </div>
     
     <script src="script.js"></script>
 </body>

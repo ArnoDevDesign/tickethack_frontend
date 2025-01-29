@@ -25,6 +25,8 @@ body {
 
 #logo {
     color : #459E85;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 nav ul li {  
@@ -53,7 +55,7 @@ nav ul li {
     text-align: center;
 }
 
-h2 {
+h1 {
     font-size: 36px;
     margin: 40px 0px 0px 0px;
 }
@@ -71,6 +73,7 @@ h2 {
     height: 45vh;
     background-color: white;
     border-radius: 16px;
+    box-shadow: 3px 3px 15px rgb(41, 41, 41);
 }
 
 #inputBoxe {
@@ -121,7 +124,7 @@ h2 {
     border-radius: 0px 0px 5px 5px;
 }
 
-.input {
+.inputDate {
     border-color: transparent;
     background-color: rgb(240, 239, 239);
     height: 40px;
@@ -132,13 +135,54 @@ h2 {
 }
 
 #resultBoxe {
+    display: flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
 
 }
 
 #defaultResult {
-
+    display: flex;
+    flex-direction : column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #tripContainer {
-    display: inline;
+    box-sizing: border-box;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(240, 239, 239);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.imageResult {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #459E85;
+}
+
+.textResult {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.values {
+    margin-right: 6px;
+}
+
+img {
+    width:50%;
+}
+
+a {
+    text-decoration: none;
+    color : black
 }

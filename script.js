@@ -1,10 +1,5 @@
+// const moment = require('moment');
 console.log("script OK !")
-
-// fonction qui supprime l'existant de la div defaultResult
-function deleteDefaultResult() {
-    document.querySelector(".defaultResult").remove()
-    document.querySelector("#resultBoxe").innerHTML += ""
-}
 
 //fonction qui ajoute les trips de la base donnée en fonction des valeurs des input
 document.querySelector("#searchTrip").addEventListener("click", function () {
@@ -16,6 +11,14 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
     console.log(arrivalValue)
     console.log(dateValue)
 
+    // Supprime l'élément "defaultResult" s'il existe
+    const defaultResult = document.querySelector("#defaultResult");
+    if (defaultResult) {
+        defaultResult.remove();
+    }
+
+    // Vider les anciens résultats
+
     fetch('http://localhost:3000/trips/', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -26,37 +29,52 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
         })
     }).then(response => response.json())
         .then(data => {
-            console.log(data)
+           
+
             if (data.result) {
-                document.querySelector("#defaultResult").remove()
-                
+                document.querySelector("#resultBoxe").innerHTML = ""
                 for (let i = 0; i < data.allTrips.length; i++) {
-                    const formattedTime = moment(data.allTrips[i].date).format("HH:mm");
+                    // extrait les heures et minutes de la valeur "date" reçu de la BDD
+                    const date = new Date(data.allTrips[i].date);
+                    const hours = date.getUTCHours().toString().padStart(2, "0"); // Ajoute un 0 si nécessaire
+                    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+                    // console.log(`${hours}:${minutes}`); 
 
                     document.querySelector("#resultBoxe").innerHTML += `                   
                         <div id="tripContainer">
                         <div id="DepartureCity" class="values">${data.allTrips[i].departure}</div>
                         <div><p>></p></div>
                         <div id="ArrivalCity" class="values">${data.allTrips[i].arrival}</div>
-                        <div id="hour" class="values">${formattedTime}</div>
+                        <div id="hour" class="values">${hours}:${minutes}</div>
                         <div id="price" class="values">${data.allTrips[i].price}</div>
                         <input id="buttonBook" class="button" type="button" value="Book">
                         </div>                   
                     `;
-                   //permet de vider les valeurs des input après la recherche
+                    //vide les valeurs des input après la recherche
                     // document.querySelector(".inputTop").value = '';
                     // document.querySelector(".inputDown").value = '';
                     // document.querySelector(".inputDate").value = '';
                 }
-                //  document.querySelector("#tripContainer").remove()
             }
 
             else {
-                console.log("no trips found")
-                document.querySelector("#imageAccueil").src = "./images/notfound.png"
-                document.querySelector(".textResult").textContent = "No trip found."
+                document.querySelector("#resultBoxe").innerHTML = `                   
+
+                 <div id="defaultResult">
+
+                        <div class="imageResult">
+                            <img id="imageAccueil" src="./images/notfound.png"/>
+                        </div>
+
+                        <div class="textResult">
+                            <p>No trip found.</p>
+                        </div>
+                    </div>
+                    `;
             }
         })
 })
+
+
 
 

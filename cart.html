@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Tickethack My carts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div id="pageContainer">
 
@@ -19,27 +23,72 @@
                 <a id="logo" href="./index.html">Tickethack</a>
             </div>
 
-            <nav id="navigation">  
-                <ul>  
-                    <li><a href="./cart.html">Cart</a></li>  
-                    <li><a href="./booking.html">Booking</a></li>   
-                </ul>  
+            <nav id="navigation">
+                <ul>
+                    <li><a href="./cart.html">Cart</a></li>
+                    <li><a href="./booking.html">Booking</a></li>
+                </ul>
             </nav>
-                
+
 
         </header>
 
 
-        <main>
- 
+        <main class="mainContainer">
+
+
+            <div id="cartBox"></div>
+
+
+        
+
+                <div id="uperbox">
+
+                    <div id="title">
+                        <p>My cart</p>
+                    </div>
+
+                        
+                    <div id="tripContainer">
+                            <div id="DepartureCity" class="values">Departure</div>
+                            <div>
+                                <p>></p>
+                            </div>
+                            <div id="ArrivalCity" class="values">arrival</div>
+                            <div id="hour" class="values">hour</div>
+                            <div id="price" class="values">Price€</div>
+                            <input class="button" type="button" value="x">
+                    </div>
+
+
+
+                </div>
+
+
+                <div id="paymentBox">
+
+                    <div id="totalPrice">
+                        <p> totalPrice</p>
+
+                    </div>
+                    <div id="buttunPurchase">
+                        <input class="button" type="button" value="x">
+                    </div>
+                </div>
+
+
+                
+
+
+            </div>
+
         </main>
 
 
 
-
-
     </div>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

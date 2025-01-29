@@ -17,8 +17,8 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
         defaultResult.remove();
     }
 
-    // Vider les anciens résultats
-
+   
+    //vas dans la route trips pour vérifier et récupérer les valeurs de la BDD
     fetch('http://localhost:3000/trips/', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -28,10 +28,10 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
             date: dateValue,
         })
     }).then(response => response.json())
-        .then(data => {
-           
+        .then(data => {          
 
             if (data.result) {
+                 // Vider les anciens résultats si la data est trouvée en amont
                 document.querySelector("#resultBoxe").innerHTML = ""
                 for (let i = 0; i < data.allTrips.length; i++) {
                     // extrait les heures et minutes de la valeur "date" reçu de la BDD
@@ -50,8 +50,8 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
                         <input id="buttonBook" class="button" type="button" value="Book">
                         </div>                   
                     `;
-                    //vide les valeurs des input après la recherche
-                    // document.querySelector(".inputTop").value = '';
+                    // vide les valeurs des input après la recherche
+                    document.querySelector(".inputTop").value = '';
                     // document.querySelector(".inputDown").value = '';
                     // document.querySelector(".inputDate").value = '';
                 }
@@ -78,3 +78,15 @@ document.querySelector("#searchTrip").addEventListener("click", function () {
 
 
 
+//fonction qui ajoute les valeurs de la liste trouvée dans le panier d'achat de la page cart 
+    // - au clic ciblé doit récupérer la ligne et l'envoyer dans la page cart
+    // - doit supprimer ensuite cette ligne de la liste ou vider la liste ?
+    // - doit renvoyer le client sur l'affichage de la page cart avec la liste des réservations faite
+document.querySelector("#buttonBook").addEventListener("click", function (){
+
+})
+
+// fonction qui calcul le total des réservations qui ciblera le paragraphe avec le prix
+function totalPrice () {
+    
+}

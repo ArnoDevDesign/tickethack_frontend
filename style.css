@@ -205,7 +205,7 @@ a {
 }
 
 #cartBox {
-    display : flex
+    display: flex;
     width: 50vw;
     height: 50vh;
     background-color: white;
